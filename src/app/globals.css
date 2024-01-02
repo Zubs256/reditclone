@@ -1,4 +1,274 @@
-.barstyle {
+body {
+  background-color: #89b9f0;
+}
+.navbar {
   display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.home {
+  width: 30px;
+}
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   gap: 10px;
+}
+.pic {
+  width: 80px;
+  margin-top: 0px;
+}
+.search {
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+}
+.create {
+  height: 30px;
+  border: none;
+}
+/* sign up modal */
+/* Add this to your styles */
+.emoji {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+/* login.module.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Adjust the top or margin-top value to move the modal up */
+  margin-top: -70px; /* Example: Move it 50 pixels up */
+}
+
+.login-form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form {
+  background-color: #232123;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.login-btn {
+  background: linear-gradient(to right, blueviolet, rgb(184, 2, 169));
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.picture {
+  width: 60px;
+  margin-top: 0px;
+  margin-left: 40%;
+}
+/* css for creating post */
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+}
+.create-post-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.create-post-form input,
+.create-post-form textarea,
+.create-post-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.title {
+  width: 100%;
+}
+/* posts css */
+.post-containers {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 20px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.posts-div {
+  display: flex;
+  flex-direction: column;
+}
+.post-buttons-containers {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border: none;
+}
+/* .btns {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgb(72, 76, 122);
+  font-size: 14px;
+  height: 38px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-image: linear-gradient(180deg, hsl(212, 77%, 72%), #f5f5fa);
+  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
+    0 1px 3px 0 rgb(93 100 148 / 20%);
+  transition: all 0.2s ease-out;
+  :hover {
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
+      0 4px 6px 0 rgb(93 100 148 / 20%);
+  }
+} */
+/* the vavbar buttons */
+.sub {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 35px; /* Adjust the height as needed */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  box-shadow: rgb(174, 93, 6) -2px -2px 0px 2px,
+    rgb(233, 112, 14) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transition: all 0.2s;
+}
+
+.sub:hover {
+  box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px,
+    rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transform: scale(0.95); /* Adjust the scale factor to your preference */
+}
+@keyframes twoColorAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.welcome {
+  background: linear-gradient(90deg, #ff8c00, #ff8c00 50%, #000 50%, #000);
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-family: "Roboto", sans-serif; /* Eye-catching font style */
+  font-size: 30px; /* Adjust the font size as needed */
+  font-weight: bold;
+  animation: twoColorAnimation 2s linear infinite;
+}
+#CLONE {
+  display: flex;
+  justify-content: center;
+  color: #e6a658;
+}
+.create-sub-btn {
+  font-size: 17px;
+  background-color: #d93b01;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  padding: 5px;
+  padding-inline: 6px;
+  width: 200px;
+}
+.body-container {
+  display: flex;
+  flex-direction: row;
+}
+.subreddit-div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 0px;
+  margin-left: 10px;
+  padding: 10px;
+}
+.posts-div {
+  width: 80%;
+}
+.icon-up {
+  width: 30px;
+}
+.vote-btns {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7f9;
+  justify-content: left;
+  align-items: flex-start;
+  margin-left: 0px;
+  margin-right: 20px;
+  align-items: center;
+  padding-top: 28px;
+}
+.upvote .downvote {
+  border: none;
+  background-color: #f5f7f9;
+}
+.name-sub {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
 }

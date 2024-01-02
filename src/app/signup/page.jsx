@@ -4,33 +4,45 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation.js";
 
-export default function Login() {
+export default function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const router = useRouter();
 
-  async function handleLogin(e) {
+  async function handleSignUp(e) {
     e.preventDefault();
-    const response = await fetch("/api/users/Login", {
+
+    // Basic form validation
+    if (!username || !password) {
+      setError("Please enter both username and password.");
+      return;
+    }
+
+    const response = await fetch("/api/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
+
     const info = await response.json();
-    console.log("info", info);
     if (info.error) {
-      return setError(info.error);
+      setError(info.error);
+      setSuccessMessage("");
+    } else {
+      setSuccessMessage("Sign-up successful! Redirecting to homepage...");
+      setError("");
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     }
-    router.push("/");
-    localStorage.setItem("loggedInUser", JSON.stringify(info.user));
-    router.refresh();
   }
 
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin} className="login-form">
+      <form onSubmit={handleSignUp} className="login-form">
         <img
           className="picture"
           src="/pictures/reddit1.png"
@@ -55,11 +67,15 @@ export default function Login() {
         />
 
         <button className="login-btn" type="submit">
-          Login
+          Sign Up
         </button>
-        <p>Not a reddit member yet?</p>
-        <Link href={"/signup"}>Sign Up</Link>
         <p className="error-message">{error}</p>
+        <p className="success-message">{successMessage}</p>
+
+        <div className="signup-link">
+          <p>Already have an account?</p>
+          <Link href="/login">Login</Link>
+        </div>
       </form>
     </div>
   );
